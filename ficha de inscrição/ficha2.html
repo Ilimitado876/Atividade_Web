@@ -1,0 +1,112 @@
+<html>
+<head>
+    <title>Form Example</title>
+    <style>
+        body {
+            background-color: #d0e4fe;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #cde8e8;
+            padding: 20px;
+            width: 300px;
+            margin-left: 20px; /* Adiciona uma margem à esquerda */
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], select, textarea {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        textarea {
+            height: 100px;
+        }
+        input[type="submit"], button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .slider-container input[type="range"] {
+            margin: 0 10px;
+        }
+        .radio-group, .checkbox-group {
+            margin-top: 10px;
+        }
+        .radio-group label, .checkbox-group label {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" value="Joao">
+
+            <label for="car">Escolha seu carro:</label>
+            <select id="car" name="car">
+                <option value="volvo">Volvo</option>
+                <option value="bmw">BMW</option>
+                <option value="audi">Audi</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="toyota">Toyota</option>
+            </select>
+
+            <label for="opinion">Deixe aqui sua opinião</label>
+            <textarea id="opinion" name="opinion"></textarea>
+
+            <input type="submit" value="Enviar">
+
+            <div class="slider-container">
+                <span>0</span>
+                <input type="range" min="0" max="100" value="50" id="slider">
+                <span>100 +</span>
+                <input type="text" id="sliderValue" value="50" style="width: 40px;" readonly>
+                <span>=</span>
+                <span id="result">99</span> <!-- Elemento para mostrar o resultado -->
+            </div>
+            <button type="button">Manda</button>
+
+            <div class="radio-group">
+                <label><input type="radio" name="language" value="html"> HTML</label>
+                <label><input type="radio" name="language" value="css"> CSS</label>
+                <label><input type="radio" name="language" value="javascript"> JavaScript</label>
+            </div>
+
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="vehicle" value="bike"> I have a bike</label>
+                <label><input type="checkbox" name="vehicle" value="car"> I have a car</label>
+                <label><input type="checkbox" name="vehicle" value="boat"> I have a boat</label>
+            </div>
+
+            <input type="button" value="input tipo botão!">
+            <button type="button">Tag botão</button>
+        </form>
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const sliderValue = document.getElementById('sliderValue');
+        const result = document.getElementById('result');
+
+        slider.addEventListener('input', function() {
+            sliderValue.value = slider.value; // Atualiza o valor exibido
+            result.textContent = slider.value; // Atualiza o resultado
+        });
+    </script>
+</body>
+</html>

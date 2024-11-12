@@ -1,0 +1,59 @@
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #E0F2F1;
+        }
+        .form-container {
+            background-color: #b3dfd9;
+            border: 1px solid #B0BEC5;
+            padding: 20px;
+            width: 350px;
+            margin: 50px auto;
+            border-radius: 5px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container input[type="date"] {
+            width: calc(100% - 10px);
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #B0BEC5;
+            border-radius: 3px;
+        }
+        .form-container input[type="submit"] {
+            background-color: #FFFFFF;
+            border: 1px solid #B0BEC5;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <form>
+            <label>Dados pessoais:</label>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" id="sobrenome" name="sobrenome">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            
+            <label for="data-nascimento">Data de Nacimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento">
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
