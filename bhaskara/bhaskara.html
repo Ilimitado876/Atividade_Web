@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Bhaskara</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e9ecef;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #80bdff;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .resultado {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #495057;
+        }
+        .historico {
+            margin-top: 20px;
+            border-top: 1px solid #ced4da;
+            padding-top: 10px;
+            text-align: left;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .historico div {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Bhaskara</h1>
+        <form id="bhaskaraForm">
+            <input type="number" id="a" placeholder="Valor de a" step="any" required>
+            <input type="number" id="b" placeholder="Valor de b" step="any" required>
+            <input type="number" id="c" placeholder="Valor de c" step="any" required>
+            <button type="button" onclick="calcularBhaskara()">Calcular</button>
+        </form>
+        <div class="resultado" id="resultado"></div>
+        <div class="historico" id="historico"></div>
+    </div>
+
+    <script>
+        function calcularBhaskara() {
+            const a = parseFloat(document.getElementById('a').value);
+            const b = parseFloat(document.getElementById('b').value);
+            const c = parseFloat(document.getElementById('c').value);
+            const resultadoDiv = document.getElementById('resultado');
+            const historicoDiv = document.getElementById('historico');
+            
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                resultadoDiv.innerHTML = "Por favor, insira valores válidos.";
+                return;
+            }
+
+            const delta = b * b - 4 * a * c;
+            let resultado;
+
+            if (delta < 0) {
+                resultado = "Delta negativo. Não há raízes reais.";
+            } else if (delta === 0) {
+                const raizUnica = -b / (2 * a);
+                resultado = `Há apenas uma raiz real: x = ${raizUnica.toFixed(2)}`;
+            } else {
+                const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                resultado = `As raízes são: x1 = ${x1.toFixed(2)}, x2 = ${x2.toFixed(2)}`;
+            }
+
+            // Exibir o resultado
+            resultadoDiv.innerHTML = resultado;
+
+            // Adicionar ao histórico
+            const historicoItem = document.createElement('div');
+            historicoItem.textContent = `a: ${a}, b: ${b}, c: ${c} => ${resultado}`;
+            historicoDiv.appendChild(historicoItem);
+
+            // Limpar os campos após o cálculo
+            document.getElementById('bhaskaraForm').reset();
+        }
+    </script>
+
+</body>
+</html>
