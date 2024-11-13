@@ -1,59 +1,140 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição Maratona</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #E0F2F1;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
         }
-        .form-container {
-            background-color: #b3dfd9;
-            border: 1px solid #B0BEC5;
-            padding: 20px;
-            width: 350px;
+        .container {
+            max-width: 500px;
             margin: 50px auto;
-            border-radius: 5px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         }
-        .form-container label {
+        h1 {
+            text-align: center;
+            color: #4a4a4a;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        label {
+            font-size: 14px;
+            margin-top: 10px;
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            color: #555;
         }
-        .form-container input[type="text"],
-        .form-container input[type="email"],
-        .form-container input[type="date"] {
-            width: calc(100% - 10px);
-            padding: 5px;
-            margin-bottom: 10px;
-            border: 1px solid #B0BEC5;
-            border-radius: 3px;
+        input, select, button, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
         }
-        .form-container input[type="submit"] {
-            background-color: #FFFFFF;
-            border: 1px solid #B0BEC5;
-            padding: 5px 10px;
-            border-radius: 3px;
+        input:focus, select:focus, textarea:focus {
+            border-color: #6a11cb;
+            outline: none;
+        }
+        button {
+            background-color: #6a11cb;
+            color: white;
+            font-size: 16px;
             cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2575fc;
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 90%;
+                padding: 15px;
+            }
         }
     </style>
+    <script>
+        function formatPhone(input) {
+            // Remove caracteres não numéricos
+            let value = input.value.replace(/\D/g, '');
+            // Aplica a máscara
+            if (value.length > 6) {
+                input.value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            } else if (value.length > 2) {
+                input.value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+            } else {
+                input.value = value;
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="form-container">
-        <form>
-            <label>Dados pessoais:</label>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
-            
-            <label for="sobrenome">Sobrenome:</label>
-            <input type="text" id="sobrenome" name="sobrenome">
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email">
-            
-            <label for="data-nascimento">Data de Nacimento:</label>
-            <input type="date" id="data-nascimento" name="data-nascimento">
-            
-            <input type="submit" value="Submit">
+
+    <div class="container">
+        <h1>Ficha de Inscrição</h1>
+        <form action="/enviar-inscricao" method="post">
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required placeholder="Digite seu e-mail">
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required placeholder="(XX) XXXXX-XXXX" oninput="formatPhone(this)">
+
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" required>
+
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required placeholder="Digite sua idade">
+
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo" required>
+                <option value="">Selecione seu sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required placeholder="Digite seu endereço">
+
+            <label for="distancia">Distância desejada:</label>
+            <select id="distancia" name="distancia" required>
+                <option value="maratona">Maratona (42 km)</option>
+                <option value="meia-mar">Meia Maratona (21 km)</option>
+                <option value="10k">10 km</option>
+                <option value="5k">5 km</option>
+            </select>
+
+            <label for="camisa">Tamanho da camiseta:</label>
+            <select id="camisa" name="camisa" required>
+                <option value="p">P</option>
+                <option value="m">M</option>
+                <option value="g">G</option>
+                <option value="gg">GG</option>
+            </select>
+
+            <label for="emergencia">Contato de emergência:</label>
+            <input type="text" id="emergencia" name="emergencia" required placeholder="Nome e telefone de emergência">
+
+            <label for="observacoes">Observações adicionais:</label>
+            <textarea id="observacoes" name="observacoes" rows="4" placeholder="Alguma observação ou necessidade especial?"></textarea>
+
+            <button type="submit">Enviar Inscrição</button>
         </form>
     </div>
+
 </body>
 </html>
