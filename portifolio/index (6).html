@@ -1,0 +1,332 @@
+<html>
+ <head>
+  <title>
+   Portfólio
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 20px;
+            background-color: #111;
+        }
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        header nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+        }
+        .intro {
+            text-align: left;
+            margin-bottom: 40px;
+        }
+        .intro h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .intro p {
+            font-size: 1.2em;
+        }
+        .skills, .portfolio, .contact {
+            margin-bottom: 40px;
+        }
+        .skills img, .portfolio img {
+            width: 50px;
+            margin: 0 10px;
+        }
+        .skills {
+            text-align: center;
+        }
+        .portfolio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .portfolio-item {
+            display: flex;
+            background-color: #222;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+        .portfolio-item img {
+            width: 150px; /* Adjusted width to make the image smaller and more square */
+            height: 150px; /* Adjusted height to make the image more square */
+            border-radius: 10px;
+        }
+        .portfolio-item .content {
+            margin-left: 20px;
+            flex: 1;
+        }
+        .portfolio-item .content h3 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .portfolio-item .content p {
+            margin: 10px 0;
+        }
+        .portfolio-item .content .tags img {
+            width: 20px; /* Adjusted width to make the image smaller */
+            height: 20px; /* Adjusted height to make the image smaller */
+            margin: 0 5px;
+        }
+        .portfolio-item .content .button {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .portfolio-item .content .button:hover {
+            background-color: #555;
+        }
+        .contact {
+            text-align: center;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .contact-item i {
+            font-size: 1em;
+            margin-right: 10px;
+        }
+        .contact-item p {
+            font-size: 0.9em;
+            margin: 0;
+        }
+        .about {
+            margin-bottom: 40px;
+            margin-top: 60px; /* Added margin-top to move the section down */
+        }
+        .about h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        .about p {
+            font-size: 1.2em;
+        }
+  </style>
+ </head>
+ <body>
+  <header>
+   <nav>
+    <a href="#home">
+     Home
+    </a>
+    <a href="#about">
+     Sobre
+    </a>
+    <a href="#skills">
+     Skills
+    </a>
+    <a href="#portfolio">
+     Portfólio
+    </a>
+    <a href="#contact">
+     Contato
+    </a>
+   </nav>
+  </header>
+  <div class="container">
+   <div class="intro" id="home">
+    < p>
+     Olá, eu sou a Alinne Fernanda
+    </p>
+    <h1>
+     Desenvolvimento Web em html5, css, javascript e php
+    </h1>
+   </div>
+   <div class="about" id="about">
+    <h2>
+     Sobre Mim
+    </h2>
+    <p>
+     Sou Estudante de Gestão de Tecnologia da Informação
+    </p>
+    <p>
+     Sou estudante de Gestão de Tecnologia da Informação, onde desenvolvo habilidades para solucionar problemas e otimizar processos usando tecnologia. Minha formação inclui desenvolvimento web com HTML5, CSS3, JavaScript e PHP, e estou constantemente aprimorando minha capacidade de análise e programação para me tornar um profissional completo na área de TI. Apaixonado por tecnologia e inovação, busco sempre expandir meus conhecimentos para contribuir de forma eficaz em projetos que tragam inovação e eficiência.
+    </p>
+   </div>
+   <div class="skills" id="skills">
+    <h2>
+     Skills
+    </h2>
+    <div>
+     <img alt="HTML5 logo" height="50" src="html5-original.svg" width="50"/>
+     <img alt="CSS3 logo" height="50" src="css3-original.svg" width="50"/>
+     <img alt="JavaScript logo" height="50" src="javascript-original.svg" width="50"/>
+     <img alt="PHP logo" height="50" src="php-original.svg" width="50"/>
+    </div>
+   </div>
+   <div class="portfolio" id="portfolio">
+    <h2>
+     Portfólio
+    </h2>
+    <div class="portfolio-item">
+     <img alt="Project image" height="150" src = "cartão.visita.png" width="150"/>
+     <div class="content">
+      <h3>
+       Cartão de visita
+      </h3>
+      <div class="tags">
+       <img alt="HTML5 logo" height="20" src="html5-original.svg" width="20"/>
+       <img alt="CSS3 logo" height="20" src="css3-original.svg" width="20"/>
+      </div>
+      <p>
+       Desenvolvido com as tecnologias HTML5 e CSS3, o cartão de visita virtual HTML5 é uma maneira moderna e prática de compartilhar informações de contato.
+      </p>
+      <a href="file:///C:/Users/alinn/Downloads/atividade%20web/cart%C3%A3o%20de%20visita/cart%C3%A3o%20de%20visita.html" class="button">
+       Ver Projeto
+       </a>
+      </button>
+     </div>
+    </div>
+    <div class="portfolio-item">
+     <img alt="Project image" height="150" src="Currículo com foto profissional.png" width="125"/>
+     <div class="content">
+      <h3>
+       Currículo
+      </h3>
+      <div class="tags">
+       <img alt="HTML5 logo" height="20" src="html5-original.svg" width="20"/>
+       <img alt="CSS3 logo" height="20" src="css3-original.svg" width="20"/>
+      </div>
+      <p>
+       Desenvolvido utilizando as tecnologias HTML5 e CSS3, o currículo online é uma forma moderna de apresentar suas informações profissionais de maneira organizada e visualmente atraente.
+      </p>
+      <a href="file:///C:/Users/alinn/Downloads/atividade%20web/curriculo/curriculo.html" class="button">
+        Ver Projeto
+        </a>
+      </button>
+     </div>
+    </div>
+    <div class="portfolio-item">
+     <img alt="Project image" height="150" src="calculadora.bhaskara.png" width="150"/>
+     <div class="content">
+      <h3>
+       Bhaskara
+      </h3>
+      <div class="tags">
+       <img alt="HTML5 logo" height="20" src="html5-original.svg" width="20"/>
+       <img alt="CSS3 logo" height="20" src="css3-original.svg" width="20"/>
+       <img alt="JavaScript logo" height="20" src="javascript-original.svg" width="20"/>
+      </div>
+      <p>
+       Criação de um aplicativo de cálculo utilizando as tecnologias HTML5, CSS3 e JavaScript. O aplicativo permite calcular as raízes de uma equação do segundo grau de forma rápida e eficiente.
+      </p>
+      <a href="file:///C:/Users/alinn/Downloads/atividade%20web/bhaskara/bhaskara.html" class="button">
+        Ver Projeto
+        </a>
+      </button>
+     </div>
+    </div>
+    <div class="portfolio-item">
+     <img alt="Project image" height="150" src="calculadora.nota.png" width="150"/>
+     <div class="content">
+      <h3>
+       Calculadora de Média
+      </h3>
+      <div class="tags">
+       <img alt="HTML5 logo" height="20" src="html5-original.svg" width="20"/>
+       <img alt="CSS3 logo" height="20" src="css3-original.svg" width="20"/>
+       <img alt="JavaScript logo" height="20" src="javascript-original.svg" width="20"/>
+      </div>
+      <p>
+       Desenvolvido com HTML5, CSS3, JavaScript e PHP, a calculadora de média permite calcular a média de notas de forma simples e eficiente, facilitando o acompanhamento do desempenho acadêmico.
+      </p>
+      <a href="file:///C:/Users/alinn/Downloads/atividade%20web/nota%20estacio/Nota-Est%C3%A1cio.html" class="button">
+        Ver Projeto
+        </a>
+      </button>
+     </div>
+    </div>
+    <div class="portfolio-item">
+     <img alt="Project image" height="150" src="furmulario.png" width="150"/>
+     <div class="content">
+      <h3>
+       Ficha de Inscrição
+      </h3>
+      <div class="tags">
+       <img alt="HTML5 logo" height="20" src="html5-original.svg" width="20"/>
+       <img alt="CSS3 logo" height="20" src="css3-original.svg" width="20"/>
+       <img alt="JavaScript logo" height="20" src="javascript-original.svg" width="20"/>
+       <img alt="PHP logo" height="20" src="php-original.svg" width="20"/>
+      </div>
+      <p>
+       Desenvolvido com HTML5, CSS3 e JavaScript, a ficha de inscrição online permite coletar informações de forma organizada e eficiente, facilitando o processo de inscrição para eventos e cursos.
+      </p>
+      <a href="file:///C:/Users/alinn/Downloads/atividade%20web/ficha%20de%20inscri%C3%A7%C3%A3o/ficha1.html" class="button">
+        Ver Projeto
+        </a>
+     </div>
+    </div>
+    <div class="portfolio-item">
+     <img alt="Project image" height="150" src="https://storage.googleapis.com/a1aa/image/Qme0oyt9saRrJKvWwgZcde3ifGyXx5EfNNKBRVjoWNAhq9edC.jpg" width="150"/>
+     <div class="content">
+      <h3>
+       Tela de login
+      </h3>
+      <div class="tags">
+       <img alt="HTML5 logo" height="20" src="html5-original.svg" width="20"/>
+       <img alt="CSS3 logo" height="20" src="css3-original.svg" width="20"/>
+       <img alt="JavaScript logo" height="20" src="javascript-original.svg" width="20"/>
+       <img alt="PHP logo" height="20" src="php-original.svg" width="20"/>
+      </div>
+      <p>
+       Criação de uma tela de login utilizando HTML, CSS e JavaScript. A tela de login permite que os usuários acessem suas contas de forma segura e eficiente.
+      </p>
+      <a href="URL_DO_SEU_PROJETO_TELA_LOGIN" class="button">
+        Ver Projeto
+        </a>
+      </button>
+     </div>
+    </div>
+   </div>
+   <div class="contact" id="contact">
+    <h2>
+     Contato
+    </h2>
+    <div class="contact-item">
+     <i class="fas fa-phone">
+     </i>
+     <p>
+      (11) 96514-4004
+     </p>
+    </div>
+    <div class="contact-item">
+     <i class="fas fa-envelope">
+     </i>
+     <p>
+      alinnefernando997@gmail.com
+     </p>
+    </div>
+    <div class="contact-item">
+     <i class="fas fa-map-marker-alt">
+     </i>
+     <p>
+      Osasco - SP
+     </p>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
